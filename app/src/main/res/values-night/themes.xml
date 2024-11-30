@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources  >
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LoginWithAnimation" parent="Theme.Material3.DayNight">
+
+        <!-- Customize your dark theme here. -->
+         <item name="colorPrimary">@color/navy</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorAccent">@color/navy</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+    <style name="Theme.LoginWithAnimation.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation
+        duration. -->
+        <item name="windowSplashScreenBackground">@color/navy</item>
+
+        <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
+             drawable. One of these is required. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_books_24</item>
+        <!-- Required for animated icons. -->
+        <item name="windowSplashScreenAnimationDuration">300</item>
+
+        <!-- Set the theme of the Activity that directly follows your splash
+        screen. This is required. -->
+        <item name="postSplashScreenTheme">@style/Theme.LoginWithAnimation</item>
+    </style>
+</resources>

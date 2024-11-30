@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dicoding Story</string>
+    <string name="signup">Sign Up</string>
+    <string name="login">Masuk</string>
+    <string name="message_welcome_page">Mari berbagi bersama kisah atau ilmumu selama belajar di Dicoding hanya di Dicoding Story!</string>
+    <string name="title_welcome_page">Selamat datang di Dicoding Story!</string>
+    <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Masukkan dulu datamu ya</string>
+    <string name="title_login_page">Sudah siap untuk berbagi cerita?</string>
+    <string name="name">Nama</string>
+    <string name="message_main_page">Selamat Belajar di Dicoding.</string>
+    <string name="logout">Keluar</string>
+    <string name="password_error">Password Harus lebih dari 8 karakter</string>
+    <string name="password_hint">Password Anda</string>
+    <string name="email_invalid">Email tidak valid</string>
+    <string name="description">Deskripsi</string>
+    <string name="validation_failed">Tolong periksa data anda</string>
+    <string name="fill_your_story_here">Bagikan cerita anda</string>
+    <string name="upload">Unggah</string>
+    <string name="user_image_to_upload">Gambar pengguna untuk diupload</string>
+    <string name="email">Email</string>
+    <string name="greeting">Halo %1$s,</string>
+    <string name="email_hint">Email Anda</string>
+    <string name="name_hint">Nama Anda</string>
+    <string name="fab_desc">Tambah Cerita</string>
+    <string name="image_story">Foto Cerita</string>
+    <string name="name_placeholder">Pengganti Nama</string>
+    <string name="title_camera">Kamera</string>
+    <string name="title_setting">Pengaturan</string>
+    <string name="gallery">Galeri</string>
+    <string name="log_in_success">Anda berhasil masuk</string>
+    <string name="detail_fail">Tidak diizinkan</string>
+    <string name="empty_image">Pilih gambar dulu</string>
+    <string name="default_description">deskripsi awal</string>
+    <string name="add_widget">Tambah Widget</string>
+    <string name="app_widget_description">Ini adalah deskripsi widget aplikasi</string>
+    <string name="language">Bahasa</string>
+</resources>

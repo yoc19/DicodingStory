@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Dicoding Story</string>
+    <string name="signup">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="message_welcome_page">Share your stories or knowledge together while learning Dicoding only at Dicoding Story!</string>
+    <string name="title_welcome_page">Welcome to Dicoding Story!</string>
+    <string name="title_signup_page">Complete your data below</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Enter your data first</string>
+    <string name="title_login_page">Are you ready to share your story?</string>
+    <string name="name">Name</string>
+    <string name="message_main_page">Happy Learning in Dicoding.</string>
+    <string name="greeting">Hello %1$s,</string>
+    <string name="logout">Logout</string>
+    <string name="password_error">Password must be more than 8 characters</string>
+    <string name="email_hint">Your Email</string>
+    <string name="password_hint">Your password</string>
+    <string name="email_invalid">Email tidak valid</string>
+    <string name="name_hint">Your Name</string>
+    <string name="fab_desc">Add Story</string>
+    <string name="image_story">Photo Story</string>
+    <string name="name_placeholder">Name Placeholder</string>
+    <string name="description">Description</string>
+    <string name="validation_failed">Please check your data</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_setting">Setting</string>
+    <string name="gallery">Gallery</string>
+    <string name="fill_your_story_here">Fill your story here</string>
+    <string name="upload">Upload</string>
+    <string name="user_image_to_upload">User Image to upload</string>
+    <string name="log_in_success">You are logged in</string>
+    <string name="detail_fail">Not Authorized\n</string>
+    <string name="empty_image">Choose image first</string>
+    <string name="default_description">default description</string>
+    <string name="time_placeholder" translatable="false">21-11-2024 | 00:00</string>
+    <string name="add_widget">Add widget</string>
+    <string name="appwidget_text" translatable="false">STORY BANNER</string>
+    <string name="empty_text" translatable="false">NO DATA</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="language">Language</string>
+
+</resources>
