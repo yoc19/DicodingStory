@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dicoding.picodiploma.loginwithanimation.data.ResultState
-import com.dicoding.picodiploma.loginwithanimation.data.UserRepository
+import com.dicoding.picodiploma.loginwithanimation.data.StoryRepository
 import com.dicoding.picodiploma.loginwithanimation.data.local.pref.UserModel
 import com.dicoding.picodiploma.loginwithanimation.data.remote.response.DefaultResponse
 import com.dicoding.picodiploma.loginwithanimation.data.remote.response.LoginResponse
@@ -12,7 +12,7 @@ import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
-class LoginViewModel(private val repository: UserRepository) : ViewModel() {
+class LoginViewModel(private val repository: StoryRepository) : ViewModel() {
 
     private val _loginResult = MutableLiveData<ResultState<LoginResponse>>()
     val loginResult = _loginResult

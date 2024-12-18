@@ -1,7 +1,9 @@
 package com.dicoding.picodiploma.loginwithanimation.view.upload
 
+import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -26,6 +28,8 @@ import com.dicoding.picodiploma.loginwithanimation.helper.uriToFile
 import com.dicoding.picodiploma.loginwithanimation.view.camera.CameraActivity
 import com.dicoding.picodiploma.loginwithanimation.view.camera.CameraActivity.Companion.CAMERAX_RESULT
 import com.dicoding.picodiploma.loginwithanimation.view.main.MainActivity.Companion.REQUIRED_PERMISSION
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 
 
 class UploadFragment : Fragment() {
@@ -35,8 +39,10 @@ class UploadFragment : Fragment() {
         )
     }
     private lateinit var binding: FragmentUploadBinding
-
     private var currentImageUri: Uri? = null
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var lat :Float? = null
+    private var lon :Float? = null
 
     private val requestPermissionLauncher =
         registerForActivityResult(
@@ -55,6 +61,31 @@ class UploadFragment : Fragment() {
             REQUIRED_PERMISSION
         ) == PackageManager.PERMISSION_GRANTED
 
+    private val requestLocationPermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ) { permissions ->
+            when {
+                permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false -> {
+                    // Precise location access granted.
+                    getMyLastLocation()
+                }
+                permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false -> {
+                    // Only approximate location access granted.
+                    getMyLastLocation()
+                }
+                else -> {
+                    // No location access granted.
+                }
+            }
+        }
+
+    private fun checkPermission(permission: String): Boolean {
+        return ContextCompat.checkSelfPermission(
+            requireContext(),
+            permission
+        ) == PackageManager.PERMISSION_GRANTED
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,10 +102,23 @@ class UploadFragment : Fragment() {
             requestPermissionLauncher.launch(REQUIRED_PERMISSION)
         }
 
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
+
         showImage()
-        binding.btnGallery.setOnClickListener { startGallery() }
-        binding.btnCamera.setOnClickListener { startCameraX() }
-        binding.buttonAdd.setOnClickListener { uploadImage() }
+        with(binding){
+            btnGallery.setOnClickListener { startGallery() }
+            btnCamera.setOnClickListener { startCameraX() }
+            buttonAdd.setOnClickListener { uploadImage() }
+            checkboxLocation.setOnClickListener {
+                if(checkboxLocation.isChecked){
+                    getMyLastLocation()
+                }else{
+                    lat = null
+                    lon = null
+                }
+            }
+        }
+
     }
 
     private fun uploadImage() {
@@ -84,7 +128,7 @@ class UploadFragment : Fragment() {
             val description = binding.edAddDescription.text
             val loadingDialog = AlertDialog.Builder(requireContext()).setView(R.layout.dialog_builder).create()
 
-            viewModel.uploadImage(imageFile, description.toString()).observe(viewLifecycleOwner) { result ->
+            viewModel.uploadImage(imageFile, description.toString(),lat?.toString(),lon?.toString()).observe(viewLifecycleOwner) { result ->
                 if (result != null) {
                     when (result) {
                         is ResultState.Loading -> {
@@ -143,6 +187,32 @@ class UploadFragment : Fragment() {
         currentImageUri?.let {
             Log.d("Image URI", "showImage: $it")
             binding.ivPhoto.setImageURI(it)
+        }
+    }
+
+    private fun getMyLastLocation() {
+        if(checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) &&
+            checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+        ){
+            fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+                if (location != null) {
+                    lat = location.latitude.toFloat()
+                    lon = location.longitude.toFloat()
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "Location is not found. Try Again",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        } else {
+            requestLocationPermissionLauncher.launch(
+                arrayOf(
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+                )
+            )
         }
     }
 }

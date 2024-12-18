@@ -1,0 +1,9 @@
+{
+  "error": false,
+  "message": "success",
+  "loginResult": {
+    "userId": "user-phU3GlRlkgr3ophd",
+    "name": "hiz",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ1c2VyLXBoVTNHbFJsa2dyM29waGQiLCJpYXQiOjE3MzQ1NTU1MTd9.BsedDZP6mA2PqEjnr2z6dZ1xy4C1rWwrDFeYUO3sVIg"
+  }
+}

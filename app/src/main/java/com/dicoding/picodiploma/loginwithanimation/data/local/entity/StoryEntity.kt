@@ -15,5 +15,8 @@ class StoryEntity (
 
     val name: String,
 
-    val description: String
+    val description: String,
+
+    val lat : Double = 0.0,
+    val lon : Double = 0.0
 )
