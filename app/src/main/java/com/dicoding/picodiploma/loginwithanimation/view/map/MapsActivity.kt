@@ -69,7 +69,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun observeViewModel() {
 
         val loadingDialog = AlertDialog.Builder(this).setView(R.layout.dialog_builder).create()
-        viewModel.getStoriesWithLocation().observe(this) { stories ->
+        viewModel.storyLocation.observe(this) { stories ->
             when (stories) {
                 is ResultState.Loading -> {
                     loadingDialog.show()

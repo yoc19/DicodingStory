@@ -41,8 +41,12 @@
     <string name="app_widget_description">This is an app widget description</string>
     <string name="language">Language</string>
     <string name="map">Map</string>
-    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
     <string name="retry">Retry</string>
     <string name="share_location">Share Location</string>
+    <string name="switch_camera">Switch Camera</string>
+    <string name="camera_screen">Camera Screen</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="your_story" translatable="false">Your Story</string>
 
 </resources>

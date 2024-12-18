@@ -115,8 +115,8 @@ dependencies {
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 
-    testImplementation("org.mockito:mockito-core:4.4.0")
-    testImplementation("org.mockito:mockito-inline:4.4.0")
+    testImplementation("org.mockito:mockito-core:5.6.0")
+    testImplementation("org.mockito:mockito-inline:5.2.0")
 
 
     androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.9.3")

@@ -20,6 +20,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
             android:textAlignment="center"
             android:layout_gravity="center"
             android:src="@drawable/ic_books_120" />
@@ -29,7 +30,7 @@
             android:textSize="50sp"
             android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Your Story"/>
+            android:text="@string/your_story"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

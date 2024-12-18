@@ -38,4 +38,9 @@
     <string name="app_widget_description">Ini adalah deskripsi widget aplikasi</string>
     <string name="language">Bahasa</string>
     <string name="retry">Coba lagi</string>
+    <string name="map">Peta</string>
+    <string name="share_location">Bagi Lokasi</string>
+    <string name="switch_camera">Ubah Kamera</string>
+    <string name="camera_screen">Layar Kamera</string>
+    <string name="profile_picture">Gambar Profil</string>
 </resources>

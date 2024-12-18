@@ -8,6 +8,7 @@
     tools:context=".view.detail.DetailActivity">
 
     <ImageView
+        android:contentDescription="@string/profile_picture"
         android:id="@+id/iv_profile"
         android:layout_width="52dp"
         android:transitionName="profile"

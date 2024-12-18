@@ -2,7 +2,6 @@ package com.dicoding.picodiploma.loginwithanimation.view.login
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.intent.Intents
@@ -15,8 +14,6 @@ import androidx.test.filters.LargeTest
 import com.dicoding.picodiploma.loginwithanimation.JsonConverter
 import com.dicoding.picodiploma.loginwithanimation.R
 import com.dicoding.picodiploma.loginwithanimation.data.remote.retrofit.ApiConfig
-import com.dicoding.picodiploma.loginwithanimation.helper.EspressoIdlingResource
-import com.dicoding.picodiploma.loginwithanimation.view.SplashActivity
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After

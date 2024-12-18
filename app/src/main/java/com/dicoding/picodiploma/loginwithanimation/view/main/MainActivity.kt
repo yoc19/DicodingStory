@@ -3,7 +3,6 @@ package com.dicoding.picodiploma.loginwithanimation.view.main
 import android.Manifest
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.findNavController
@@ -13,7 +12,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.dicoding.picodiploma.loginwithanimation.R
 import com.dicoding.picodiploma.loginwithanimation.databinding.ActivityMainBinding
 import com.dicoding.picodiploma.loginwithanimation.view.BaseClass
-import com.dicoding.picodiploma.loginwithanimation.helper.ViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : BaseClass() {

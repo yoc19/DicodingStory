@@ -9,7 +9,6 @@ import com.dicoding.picodiploma.loginwithanimation.data.local.StoryDatabase
 import com.dicoding.picodiploma.loginwithanimation.data.local.entity.RemoteKeys
 import com.dicoding.picodiploma.loginwithanimation.data.local.entity.StoryEntity
 import com.dicoding.picodiploma.loginwithanimation.data.local.pref.UserPreference
-import com.dicoding.picodiploma.loginwithanimation.data.remote.response.ListStoryItem
 import com.dicoding.picodiploma.loginwithanimation.data.remote.retrofit.ApiService
 import kotlinx.coroutines.flow.first
 

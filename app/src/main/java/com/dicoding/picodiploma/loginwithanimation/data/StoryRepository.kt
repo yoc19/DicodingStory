@@ -97,33 +97,7 @@ class StoryRepository private constructor(
 
     }
 
-    fun getStoriesWithLocation(): LiveData<ResultState<List<StoryEntity>>> = liveData {
-        emit(ResultState.Loading)
-        try {
-            val token = "Bearer ${userPreference.getToken().first()}"
-            val response = apiService.getStoriesWithLocation(token)
-            val story = response.listStory
-            val storyList = story.map { story ->
-                StoryEntity(
-                    id = story.id,
-                    photoUrl = story.photoUrl,
-                    createdAt = story.createdAt,
-                    name = story.name,
-                    description = story.description,
-                    lat = story.lat,
-                    lon = story.lon
-                )
-            }
-            storyDatabase.storyDao().deleteAllStory()
-            storyDatabase.storyDao().insertStories(storyList)
-        } catch (e: Exception) {
-            Log.d("Repository", "getStories: ${e.message.toString()} ")
-            emit(ResultState.Error(e.message.toString()))
-        }
-        val localData: LiveData<ResultState<List<StoryEntity>>> =
-            storyDatabase.storyDao().getStory().map { ResultState.Success(it) }
-        emitSource(localData)
-    }
+    suspend fun getStoriesWithLocation()= apiService.getStoriesWithLocation("Bearer ${userPreference.getToken().first()}")
 
     companion object {
         @Volatile

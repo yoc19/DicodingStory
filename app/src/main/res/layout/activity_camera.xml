@@ -14,6 +14,7 @@
         android:layout_height="match_parent" />
 
     <ImageView
+        android:contentDescription="@string/camera_screen"
         android:id="@+id/captureImage"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -24,6 +25,7 @@
         app:srcCompat="@drawable/ic_capture" />
 
     <ImageView
+        android:contentDescription="@string/switch_camera"
         android:id="@+id/switchCamera"
         android:layout_width="40dp"
         android:layout_height="40dp"
